@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 import 'dart:async';
-import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
 
+import './sqlite/init.dart';
 import './widgets/app.dart';
 
 void main() async {
-  //var db = await openDatabase('my_db.db');
+  WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(App());
+  //var db = await openDatabase('my_db.db');
+  var database = await initializeDatabase();
+
+  runApp(App(database: database,));
 }
 
 
