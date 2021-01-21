@@ -112,10 +112,27 @@ Future<Database> initializeDatabase() async {
         ('LIQUEUR', 'FRANGELICO', '프랑젤리코', '', 160),
         ('LIQUEUR', 'ANGOSTURA_BITTERS', '앙고스투라 비터스', '', 160),
         
-        ('FRUITS', '과일', 30),
+        ('FRUITS', 'LEMON', '레몬', '', 160),
+        ('FRUITS', 'LIME', '라임', '', 160),
+        ('FRUITS', 'CHERRY', '체리', '', 160),
+        
         ('SYRUP', '시럽', 40),
-        ('JUICE', '주스', 50),
-        ('BEVERAGES', '음료수', 60),
+        ('SYRUP', '그레나딘 시럽', 40),
+        ('SYRUP', '라즈베리 시럽', 40),
+        
+        ('JUICE', 'LEMON_JUICE', '레몬주스', 50),
+        ('JUICE', 'LIME_JUICE', '라임주스', 50),
+        ('JUICE', 'ORANGE_JUICE', '오렌지주스', 50),
+        ('JUICE', 'RASBERRY_JUICE', '라즈베리주스', 50),
+        ('JUICE', 'RASBERRY_JUICE', '자몽주스', 50),
+        ('JUICE', 'PINEAPPLE_JUICE', '파인애플주스', 50),
+        ('JUICE', 'APPLE_JUICE', '사과주스', 50),
+        
+        ('BEVERAGES', 'WATER', '물', 60),
+        ('BEVERAGES', '', '사이다', 60),
+        ('BEVERAGES', '', '콜라', 60),
+        ('BEVERAGES', 'MILE', '우유', 60),
+        
         ('OTHERS', '기타', 100)
         ''');
     },
