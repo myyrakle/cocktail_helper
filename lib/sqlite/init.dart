@@ -78,7 +78,7 @@ Future<Database> initializeDatabase() async {
         ('LIQUEUR', 'CREME_DE_MENTHE_GREEN', '크렘 드 멘트 그린', '', 60),
         ('LIQUEUR', 'CREME_DE_MENTHE_WHITE', '크렘 드 멘트 화이트', '', 70),
         ('LIQUEUR', 'MELON_LIQUEUR', '메론 리큐르', '', 70),
-        ('LIQUEUR', 'PEACH_LIQUEUR', '피치 리큐르', '', 80),
+        ('LIQUEUR', 'PEACH_SCHNAPPS', '피치 시냅스', '', 80),
         ('LIQUEUR', 'PEACH_BRANDY', '피치 브랜디', '', 90),
         ('LIQUEUR', 'CHERRY_BRANDY', '체리 브랜디', '', 100),
         ('LIQUEUR', 'AMARETTO', '아마레또', '', 110),
@@ -129,10 +129,13 @@ Future<Database> initializeDatabase() async {
         ('JUICE', 'APPLE_JUICE', '사과주스', 50),
         
         ('BEVERAGES', 'WATER', '물', 60),
-        ('BEVERAGES', '', '사이다', 60),
-        ('BEVERAGES', '', '콜라', 60),
-        ('BEVERAGES', 'MILE', '우유', 60),
+        ('BEVERAGES', 'WATER_SPARKLING', '탄산수', 60),
+        ('BEVERAGES', 'CIDER', '사이다', 60),
+        ('BEVERAGES', 'COLA', '콜라', 60),
+        ('BEVERAGES', 'MILK', '우유', 60),
+        ('BEVERAGES', 'COCONUT_MILK', '코코넛 밀크', 60),
         
+        ('OTHERS', 'CREAM', '크림', 100), 
         ('OTHERS', '기타', 100)
         ''');
     },
