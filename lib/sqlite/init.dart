@@ -70,6 +70,7 @@ Future<Database> initializeDatabase() async {
         ('SPIRIT', 'WHISKEY_BOURBON', '버번 위스키', '버번 위스키는 미국에서 옥수수로 생산된 위스키들을 말합니다. 시중에 잘 보이진 않으나, 주류전문점에 가면 괜찮은 것들이 꽤 많아요.', 63),
         ('SPIRIT', 'WHISKEY_RYE', '라이 위스키', '라이 위스키는 호밀로 만들어진 미국산 위스키입니다. 국내에선 보기가 쉽지 않을 거에요.', 64),
         
+        -- 리큐르
         ('LIQUEUR', 'TRIPLE_SEC', '트리플 섹', '트리플 섹은 오렌지 껍질로 만든 리큐르입니다. 아주 달고 도수도 40도 정도로 높아요. 볼스, 디카이퍼 등의 제품이 저렴하고, 가장 고급으로 치는건 코앵트로입니다.', 10),
         ('LIQUEUR', 'BLUE_CURACAO', '블루 큐라소', '트리플 섹에 파란색 색깔만 넣은 리큐르에요. 볼스나 디카이퍼 등으로 구하면 됩니다.', 20),
         ('LIQUEUR', 'CASSIS', '카시스', '카시스는 블랙 커런트라는 베리로 만든 리큐르입니다. 특유의 풋내가 개성적이에요.', 30),
@@ -89,7 +90,6 @@ Future<Database> initializeDatabase() async {
         ('LIQUEUR', 'COCONUT_RUM', '코코넛 럼', '', 160),
         ('LIQUEUR', 'APPLE_PUCKER', '애플 퍼커', '', 170),
         ('LIQUEUR', 'PARFAIT', '파르페 아모르', '', 160),
-        
         ('LIQUEUR', 'CAMPARI', '캄파리', '', 160),
         ('LIQUEUR', 'VERMOUTH_SWEET', '스위트 베르무트', '', 160),
         ('LIQUEUR', 'VERMOUTH_DRY', '드라이 베르무트', '', 160),
@@ -116,6 +116,8 @@ Future<Database> initializeDatabase() async {
         ('FRUITS', 'LIME', '라임', '', 160),
         ('FRUITS', 'ORANGE', '라임', '', 160),
         ('FRUITS', 'CHERRY', '체리', '', 160),
+        ('FRUITS', 'BANANA', '바나나', '', 160),
+        ('FRUITS', 'STRAWBERRY', '딸기', '', 160),
         
         ('SYRUP', '시럽', 10),
         ('SYRUP', '그레나딘 시럽', 20),
@@ -125,7 +127,7 @@ Future<Database> initializeDatabase() async {
         ('JUICE', 'LIME_JUICE', '라임주스', 50),
         ('JUICE', 'ORANGE_JUICE', '오렌지주스', 50),
         ('JUICE', 'RASBERRY_JUICE', '라즈베리주스', 50),
-        ('JUICE', 'RASBERRY_JUICE', '자몽주스', 50),
+        ('JUICE', 'GRAPEFRUIT_JUICE', '자몽주스', 50),
         ('JUICE', 'PINEAPPLE_JUICE', '파인애플주스', 50),
         ('JUICE', 'APPLE_JUICE', '사과주스', 50),
         ('JUICE', 'TOMATO_JUICE', '토마토주스', 50),
@@ -146,6 +148,7 @@ Future<Database> initializeDatabase() async {
         ('OTHERS', 'SALT', '소금', 100), 
         ('OTHERS', 'SUGAR', '설탕', 100),  
         ('OTHERS', 'HONEY', '꿀', 100),  
+        ('OTHERS', 'CACAO_POWDEr', '카카오 파우더', 100),  
         ('OTHERS', '기타', 100)
         ''');
     },
