@@ -114,11 +114,12 @@ Future<Database> initializeDatabase() async {
         
         ('FRUITS', 'LEMON', '레몬', '', 160),
         ('FRUITS', 'LIME', '라임', '', 160),
+        ('FRUITS', 'ORANGE', '라임', '', 160),
         ('FRUITS', 'CHERRY', '체리', '', 160),
         
-        ('SYRUP', '시럽', 40),
-        ('SYRUP', '그레나딘 시럽', 40),
-        ('SYRUP', '라즈베리 시럽', 40),
+        ('SYRUP', '시럽', 10),
+        ('SYRUP', '그레나딘 시럽', 20),
+        ('SYRUP', '라즈베리 시럽', 30),
         
         ('JUICE', 'LEMON_JUICE', '레몬주스', 50),
         ('JUICE', 'LIME_JUICE', '라임주스', 50),
@@ -127,9 +128,12 @@ Future<Database> initializeDatabase() async {
         ('JUICE', 'RASBERRY_JUICE', '자몽주스', 50),
         ('JUICE', 'PINEAPPLE_JUICE', '파인애플주스', 50),
         ('JUICE', 'APPLE_JUICE', '사과주스', 50),
+        ('JUICE', 'TOMATO_JUICE', '토마토주스', 50),
         
         ('BEVERAGES', 'WATER', '물', 60),
         ('BEVERAGES', 'WATER_SPARKLING', '탄산수', 60),
+        ('BEVERAGES', 'TONIC', '탄산수', 60),
+        ('BEVERAGES', 'GINGER_ALE', '진저에일', 60),
         ('BEVERAGES', 'CIDER', '사이다', 60),
         ('BEVERAGES', 'COLA', '콜라', 60),
         ('BEVERAGES', 'MILK', '우유', 60),
@@ -138,7 +142,10 @@ Future<Database> initializeDatabase() async {
         ('OTHERS', 'CREAM', '크림', 100), 
         ('OTHERS', 'EGG', '계란', 100),
         ('OTHERS', 'EGG_WHITE', '계란 흰자', 100), 
-        ('OTHERS', 'EGG_YOLK', '계란 노른자', 100), 
+        ('OTHERS', 'EGG_YOLK', '계란 노른자', 100),
+        ('OTHERS', 'SALT', '소금', 100), 
+        ('OTHERS', 'SUGAR', '설탕', 100),  
+        ('OTHERS', 'HONEY', '꿀', 100),  
         ('OTHERS', '기타', 100)
         ''');
     },
