@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'dart:async';
-
-import './sqlite/init.dart';
-import './widgets/app.dart';
+import 'package:cocktail_helper/sqlite/init.dart';
+import 'package:cocktail_helper/widgets/app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   //var db = await openDatabase('my_db.db');
-  var database = await initializeDatabase();
+  var databaseManager = await initializeDatabase();
 
-  runApp(App(database: database,));
+  runApp(App(databaseManager: databaseManager,));
 }
 
 

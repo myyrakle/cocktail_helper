@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import './homepage.dart';
+import 'package:cocktail_helper/sqlite/manager.dart';
 
-import 'package:sqflite/sqflite.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
-  App({this.database});
+  App({this.databaseManager});
 
-  final Database database;
+  final DatabaseManager databaseManager;
 
   // This widget is the root of your application.
   @override
@@ -21,8 +21,10 @@ class App extends StatelessWidget {
       home: HomePage(title: 'Flutter Demo Home Page'),
     );
 
-    return Provider(
-      create: (_) => database,
+    return MultiProvider(
+      providers: [
+        Provider(create: (_)=>databaseManager)
+      ],
       child: materialApp,
     );
   }
