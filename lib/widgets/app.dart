@@ -4,8 +4,8 @@ import 'package:cocktail_helper/sqlite/manager.dart';
 
 import 'package:provider/provider.dart';
 
-class App extends StatelessWidget {
-  App({this.databaseManager});
+class MainApp extends StatelessWidget {
+  MainApp({this.databaseManager});
 
   final DatabaseManager databaseManager;
 
@@ -18,7 +18,10 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(title: 'Flutter Demo Home Page'),
+      }
     );
 
     return MultiProvider(

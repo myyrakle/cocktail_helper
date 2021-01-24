@@ -9,7 +9,7 @@ void main() async {
   //var db = await openDatabase('my_db.db');
   var databaseManager = await initializeDatabase();
 
-  runApp(App(databaseManager: databaseManager,));
+  runApp(MainApp(databaseManager: databaseManager,));
 }
 
 
