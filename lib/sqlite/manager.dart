@@ -20,4 +20,12 @@ class DatabaseManager {
       order by material_name
     ''');
   }
+
+  Future<List<Object>> getCocktailMethodList(String category) async {
+    return await database.rawQuery('''
+      select *
+      from tb_material
+      order by material_name
+    ''');
+  }
 }
