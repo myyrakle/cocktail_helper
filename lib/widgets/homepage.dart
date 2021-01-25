@@ -28,7 +28,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     var db = context.watch<DatabaseManager>();
 
     return Scaffold(
@@ -51,15 +50,11 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          var foo = [];
+          var foo = await db.getCocktailMethodList();
+          //v = [];
           Fluttertoast.showToast(
-              msg: "테스트. $foo",
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.CENTER,
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              fontSize: 16.0
+            msg: "테스트. $foo",
+            toastLength: Toast.LENGTH_SHORT,
           );
         },
         tooltip: 'Increment',
