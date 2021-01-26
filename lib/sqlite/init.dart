@@ -277,17 +277,42 @@ Future<DatabaseManager> initializeDatabase() async {
            3, 
            '화이트 레이디', 
            'SHAKING', 
-           '새콤하고 향긋한 한 잔입니다.', 
+           '새콤하고 향긋한 한 잔입니다. 재료들을 셰이커에 넣고 열심히 흔들면 완성입니다.', 
            0
         );
         
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
-        (3, 'GIN', 0, '45ml'),
+        (3, 'GIN', 0, '30ml'),
         (3, 'CREAM', 0, '15ml'),
         (3, 'GRENADINE_SYRUP', 0, '10ml'),
         (3, 'EGG_WHITE', 0, '1개');
+        
+        INSERT INTO "tb_cocktail"
+        (
+          "cocktail_no",
+          "cocktail_name",
+          "cocktail_method",
+          "description",  
+          "is_non_alcohol"
+        )
+        VALUES
+        (
+           4, 
+           '스위트 마티니', 
+           'SHAKING', 
+           '마티니에서 드라이 베르뭇을 스위트 베르뭇으로 바꾼 버전입니다. 마티니와 큰 차이는 없습니다.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (4, 'GIN', 0, '50ml'),
+        (4, 'VERMOUTH_SWEET', 0, '10ml'),
+        (4, 'OLIVE', 0, '1개');
+        
         
         
         ''');
