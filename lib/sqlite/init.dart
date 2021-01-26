@@ -9,8 +9,7 @@ Future<DatabaseManager> initializeDatabase() async {
   var database = await openDatabase(
     path,
     onCreate: (db, version) async {
-      await db.execute(
-        '''
+      await db.execute('''
         CREATE TABLE "tb_material_category" 
         (
           "material_category_id"	TEXT NOT NULL,
@@ -22,8 +21,7 @@ Future<DatabaseManager> initializeDatabase() async {
         );
         ''');
 
-      await db.execute(
-        '''
+      await db.execute('''
         INSERT INTO "tb_material_category"
         (material_category_id, material_category_name, order_value) 
         VALUES
@@ -36,8 +34,7 @@ Future<DatabaseManager> initializeDatabase() async {
         ('OTHERS', '기타', 100)
         ''');
 
-      await db.execute(
-        '''
+      await db.execute('''
         CREATE TABLE "tb_material" 
         (
           "material_id"	text		NOT NULL,
@@ -52,8 +49,7 @@ Future<DatabaseManager> initializeDatabase() async {
         );
         ''');
 
-      await db.execute(
-        '''
+      await db.execute('''
         INSERT INTO "tb_material"
         (material_category_id, material_id, material_name, description, order_value) 
         VALUES
@@ -120,6 +116,7 @@ Future<DatabaseManager> initializeDatabase() async {
         ('FRUITS', 'CHERRY', '체리', '새콤한 체리', 40),
         ('FRUITS', 'BANANA', '바나나', '부드러운 바나나', 50),
         ('FRUITS', 'STRAWBERRY', '딸기', '산뜻한 딸기', 60),
+        ('FRUITS', 'OLIVE', '올리브', '올리브 병조림을 사용하면 됩니다.', 60),
         
         ('SYRUP', 'SYRUP', '시럽', '시럽은 그냥 설탕물입니다. 구매해서 사용해도 좋지만, 그냥 물과 설탕을 부피 1:1로 섞어서 끓이면 쉽게 만들어집니다. 이것저것 첨가해도 좋고요.', 10),
         ('SYRUP', 'GRENADINE_SYRUP', '그레나딘 시럽', '그레나딘 시럽은 짙은 적색의 석류맛 시럽입니다. 색을 낼때 주로 사용합니다.', 20),
@@ -156,8 +153,7 @@ Future<DatabaseManager> initializeDatabase() async {
         ('OTHERS', 'CACAO_POWDER', '카카오 파우더', '아주 일부 레시피에만 사용됩니다.', 180)
         ''');
 
-      await db.execute(
-        '''
+      await db.execute('''
         CREATE TABLE "tb_cocktail_method" (
           "cocktail_method"	text		NOT NULL,
           "method_text"	text		NULL,
@@ -168,8 +164,7 @@ Future<DatabaseManager> initializeDatabase() async {
         );
         ''');
 
-      await db.execute(
-        '''
+      await db.execute('''
         INSERT INTO "tb_cocktail_method"
         (
           "cocktail_method",
@@ -185,8 +180,7 @@ Future<DatabaseManager> initializeDatabase() async {
         ('THROWING', '쓰로잉', '셰이커 두개에 재료를 따라놓고 번갈아가며 높이 붓는 독특한 기법입니다.');
         ''');
 
-      await db.execute(
-        '''
+      await db.execute('''
         CREATE TABLE "tb_cocktail" (
           "cocktail_no"	int8		NOT NULL,
           "cocktail_name"	text		NULL,
@@ -212,8 +206,7 @@ Future<DatabaseManager> initializeDatabase() async {
         );
         ''');
 
-      await db.execute(
-        '''
+      await db.execute('''
         INSERT INTO "tb_cocktail"
         (
           "cocktail_no",
@@ -232,12 +225,7 @@ Future<DatabaseManager> initializeDatabase() async {
         );
         
         INSERT INTO "tb_cocktail_material"
-        (
-          "cocktail_no",
-          "material_id",
-          "optional",
-          "amount"
-        )
+        ("cocktail_no", "material_id", "optional", "amount")
         VALUES
         (
            1, 
@@ -251,6 +239,57 @@ Future<DatabaseManager> initializeDatabase() async {
            0, 
            '2~3'
         );
+        
+        INSERT INTO "tb_cocktail"
+        (
+          "cocktail_no",
+          "cocktail_name",
+          "cocktail_method",
+          "description",  
+          "is_non_alcohol"
+        )
+        VALUES
+        (
+           2, 
+           '마티니', 
+           'STIR', 
+           '칵테일의 왕이라 불리는 마티니입니다. 그래도 대단한 맛은 기대하지 않는 게 좋을 거에요. 진과 베르뭇을 넣어서 젓고, 올리브 한개를 넣어주면 됩니다.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (2, 'GIN', 0, '45ml'),
+        (2, 'VERMOUTH_DRY', 0, '15ml'),
+        (2, 'OLIVE', 0, '1개');
+        
+        INSERT INTO "tb_cocktail"
+        (
+          "cocktail_no",
+          "cocktail_name",
+          "cocktail_method",
+          "description",  
+          "is_non_alcohol"
+        )
+        VALUES
+        (
+           3, 
+           '화이트 레이디', 
+           'SHAKING', 
+           '새콤하고 향긋한 한 잔입니다.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (3, 'GIN', 0, '45ml'),
+        (3, 'CREAM', 0, '15ml'),
+        (3, 'GRENADINE_SYRUP', 0, '10ml'),
+        (3, 'EGG_WHITE', 0, '1개');
+        
+        
         ''');
     },
     version: 1,
