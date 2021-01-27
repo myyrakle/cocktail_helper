@@ -313,8 +313,78 @@ Future<DatabaseManager> initializeDatabase() async {
         (4, 'VERMOUTH_SWEET', 0, '10ml'),
         (4, 'OLIVE', 0, '1개');
         
+        INSERT INTO "tb_cocktail"
+        (
+          "cocktail_no",
+          "cocktail_name",
+          "cocktail_method",
+          "description",  
+          "is_non_alcohol"
+        )
+        VALUES
+        (
+           5, 
+           'A1', 
+           'SHAKING', 
+           '새콤달콤하면서도 알코올이 훅 올라오는 한 잔입니다.', 
+           0
+        );
         
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (5, 'GIN', 0, '30ml'),
+        (5, 'TRIPLE_SEC', 0, '15ml'),
+        (5, 'LEMON_JUICE', 0, '15ml'),
+        (5, 'GRENADINE_SYRUP', 0, '1 대쉬');
         
+        INSERT INTO "tb_cocktail"
+        (
+          "cocktail_no",
+          "cocktail_name",
+          "cocktail_method",
+          "description",  
+          "is_non_alcohol"
+        )
+        VALUES
+        (
+           6, 
+           '하와이안', 
+           'SHAKING', 
+           '씁쓸하면서도 파일애플의 청량한 맛이 잘 느껴지는 한 잔입니다.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (6, 'GIN', 0, '60ml'),
+        (6, 'TRIPLE_SEC', 0, '15ml'),
+        (6, 'PINEAPPLE_JUICE', 0, '10ml');
+        
+        INSERT INTO "tb_cocktail"
+        (
+          "cocktail_no",
+          "cocktail_name",
+          "cocktail_method",
+          "description",  
+          "is_non_alcohol"
+        )
+        VALUES
+        (
+           7, 
+           '오렌지 블라썸', 
+           'SHAKING', 
+           '오렌지와 진의 향이 뒤섞인 무난한 한 잔입니다.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (7, 'GIN', 0, '30ml'),
+        (7, 'ORANGE_JUICE', 0, '30ml'),
+        (7, 'SUGAR', 0, '1 티스푼');
         ''');
     },
     version: 1,
