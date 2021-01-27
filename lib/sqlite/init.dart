@@ -367,6 +367,23 @@ Future<DatabaseManager> initializeDatabase() async {
         (8, 'GIN', 0, '30ml'),
         (8, 'VERMOUTH_DRY', 0, '30ml'),
         (8, 'LIME_JUICE', 0, '15ml');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           9
+           '진 앤 잇', 
+           'STIR', 
+           '진과 스위트 베르뭇을 1:1로 섞는 단순한 레시피입니다. 잇(It)이 이탈리아의 준말이라, 이탈리아산 베르뭇을 쓰는게 정석이죠.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (9, 'GIN', 0, '30ml'),
+        (9, 'VERMOUTH_SWEET', 0, '30ml');
         ''');
     },
     version: 1,
