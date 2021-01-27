@@ -208,13 +208,7 @@ Future<DatabaseManager> initializeDatabase() async {
 
       await db.execute('''
         INSERT INTO "tb_cocktail"
-        (
-          "cocktail_no",
-          "cocktail_name",
-          "cocktail_method",
-          "description",  
-          "is_non_alcohol"
-        )
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
         VALUES
         (
            1, 
@@ -241,13 +235,7 @@ Future<DatabaseManager> initializeDatabase() async {
         );
         
         INSERT INTO "tb_cocktail"
-        (
-          "cocktail_no",
-          "cocktail_name",
-          "cocktail_method",
-          "description",  
-          "is_non_alcohol"
-        )
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
         VALUES
         (
            2, 
@@ -265,13 +253,7 @@ Future<DatabaseManager> initializeDatabase() async {
         (2, 'OLIVE', 0, '1개');
         
         INSERT INTO "tb_cocktail"
-        (
-          "cocktail_no",
-          "cocktail_name",
-          "cocktail_method",
-          "description",  
-          "is_non_alcohol"
-        )
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
         VALUES
         (
            3, 
@@ -290,13 +272,7 @@ Future<DatabaseManager> initializeDatabase() async {
         (3, 'EGG_WHITE', 0, '1개');
         
         INSERT INTO "tb_cocktail"
-        (
-          "cocktail_no",
-          "cocktail_name",
-          "cocktail_method",
-          "description",  
-          "is_non_alcohol"
-        )
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
         VALUES
         (
            4, 
@@ -314,13 +290,7 @@ Future<DatabaseManager> initializeDatabase() async {
         (4, 'OLIVE', 0, '1개');
         
         INSERT INTO "tb_cocktail"
-        (
-          "cocktail_no",
-          "cocktail_name",
-          "cocktail_method",
-          "description",  
-          "is_non_alcohol"
-        )
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
         VALUES
         (
            5, 
@@ -339,13 +309,7 @@ Future<DatabaseManager> initializeDatabase() async {
         (5, 'GRENADINE_SYRUP', 0, '1 대쉬');
         
         INSERT INTO "tb_cocktail"
-        (
-          "cocktail_no",
-          "cocktail_name",
-          "cocktail_method",
-          "description",  
-          "is_non_alcohol"
-        )
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
         VALUES
         (
            6, 
@@ -385,6 +349,24 @@ Future<DatabaseManager> initializeDatabase() async {
         (7, 'GIN', 0, '30ml'),
         (7, 'ORANGE_JUICE', 0, '30ml'),
         (7, 'SUGAR', 0, '1 티스푼');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           8 
+           '뱀파이어', 
+           'SHAKING', 
+           '재료를 셰이킹한 후 체리가 있다면 장식해주면 됩니다. 베르뭇과 라임의 맛이 기묘하게 어우러지는 것이 인상적입니다. 진의 맛은 상당히 묻히는 편이군요.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (8, 'GIN', 0, '30ml'),
+        (8, 'VERMOUTH_DRY', 0, '30ml'),
+        (8, 'LIME_JUICE', 0, '15ml');
         ''');
     },
     version: 1,
