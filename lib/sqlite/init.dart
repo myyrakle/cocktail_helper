@@ -384,6 +384,100 @@ Future<DatabaseManager> initializeDatabase() async {
         VALUES
         (9, 'GIN', 0, '30ml'),
         (9, 'VERMOUTH_SWEET', 0, '30ml');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           10
+           '델프트 동키', 
+           'BUILD', 
+           '모스코 뮬의 변형 레시피 중 하나입니다. 시원한 드링크죠.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (10, 'GIN', 0, '45ml'),
+        (10, 'LEMON_JUICE', 0, '15ml'),
+        (10, 'GINGER_ALE', 0, '채우기(60ml 이상)');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           11
+           '골드 피즈', 
+           'SHAKING', 
+           '레몬의 맛과 탄산이 살짝 느껴지는 부드러운 한 잔입니다. 탄산수를 제외한 재료를 셰이킹한 후, 탄산수를 채워주면 끝입니다.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (11, 'GIN', 0, '45ml'),
+        (11, 'LEMON_JUICE', 0, '15ml'),
+        (11, 'EGG_YOLK', 0, '1개'),
+        (11, 'SUGAR', 0, '1 티스푼'),
+        (11, 'WATER_SPARKLING', 0, '채우기(60ml 정도)');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           12
+           '실버 피즈', 
+           'SHAKING', 
+           '골드 피즈에서 노른자만 흰자로 바꾼 레시피입니다. 부드러운 맛은 덜하지만, 균형감은 좀더 좋은 느낌입니다.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (12, 'GIN', 0, '45ml'),
+        (12, 'LEMON_JUICE', 0, '15ml'),
+        (12, 'EGG_WHITE', 0, '1개'),
+        (12, 'SUGAR', 0, '1 티스푼'),
+        (12, 'WATER_SPARKLING', 0, '채우기(60ml 정도)');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           13
+           '핑크 레이디', 
+           'SHAKING', 
+           '이름 그대로 핑크빛을 띠는 부드러운 한 잔입니다. 부드러운 질감과 함께 진의 향과 맛이 은은하게 느껴집니다. 크림은 우유로 대체해도 되지만, 크림이 좀더 부드럽고 좋습니다.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (13, 'GIN', 0, '45ml'),
+        (13, 'CREAM', 0, '15ml'),
+        (13, 'EGG_WHITE', 0, '1개'),
+        (13, 'GRENADINE_SYRUP', 0, '10ml');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           14
+           '김렛', 
+           'SHAKING', 
+           '새콤 향긋한 한 잔입니다. 송곳(Gimlet)이라는 이름처럼 새콤한 맛이 혀를 찔러옵니다.', 
+           0
+        );
+        
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (14, 'GIN', 0, '45ml'),
+        (14, 'LIME_JUICE', 0, '15ml');
         ''');
     },
     version: 1,
