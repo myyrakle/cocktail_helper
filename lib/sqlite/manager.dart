@@ -51,13 +51,27 @@ class DatabaseManager {
     ''');
   }
 
-  // 만들 수 있는 칵테일 레시피 전체 조회
+  // 하나만 있으면 만들 수 있는 칵테일 레시피 전체 조회
   Future<List<Object>> getCocktailListNeedOne(String search) async {
     return await database.rawQuery('''
-      select *
+      select 
+        a.cocktail_no
+        , a.cocktail_name
+        , a.description
+        , a.cocktail_method
+        , count()
       from tb_cocktail a
-      where 1=1
-        and a.cocktail_name like '%$search%'
+      join tb_cocktail_material b 
+      on 1=1
+        and a.cocktail_no = b.cocktail_no
+      join tb_material c 
+      on 1=1
+        and b.material_id = c.material_id
+      group by 
+        a.cocktail_name
+        , a.cocktail_name
+        , a.description
+        , a.cocktail_method
       order by a.cocktail_name
     ''');
   }
