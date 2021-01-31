@@ -34,7 +34,30 @@ class DatabaseManager {
       select *
       from tb_cocktail a
       where 1=1
-        a.cocktail_name like '%$search%'
+        and a.cocktail_name like '%$search%'
+      order by a.cocktail_name
+    ''');
+  }
+
+  // 만들 수 있는 칵테일 레시피 전체 조회
+  Future<List<Object>> getCocktailListAvailable(String search) async {
+    return await database.rawQuery('''
+      select *
+      from tb_cocktail a
+      where 1=1
+        and 
+        and a.cocktail_name like '%$search%'
+      order by a.cocktail_name
+    ''');
+  }
+
+  // 만들 수 있는 칵테일 레시피 전체 조회
+  Future<List<Object>> getCocktailListNeedOne(String search) async {
+    return await database.rawQuery('''
+      select *
+      from tb_cocktail a
+      where 1=1
+        and a.cocktail_name like '%$search%'
       order by a.cocktail_name
     ''');
   }
@@ -57,13 +80,13 @@ class DatabaseManager {
     ''');
   }
 
-  // 특정 재료를 사용하는 칵테일 레시피 전체 조회
+  // 특정 방법을 사용하는 칵테일 레시피 전체 조회
   Future<List<Object>> getCocktailListByMethod(String materialId) async {
     return await database.rawQuery('''
       select *
       from tb_cocktail a
       where 1=1
-        a.cocktail_method = '$materialId'
+        and a.cocktail_method = '$materialId'
       order by a.cocktail_name
     ''');
   }
