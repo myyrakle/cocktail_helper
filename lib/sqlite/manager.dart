@@ -59,19 +59,39 @@ class DatabaseManager {
         , a.cocktail_name
         , a.description
         , a.cocktail_method
-        , count()
       from tb_cocktail a
-      join tb_cocktail_material b 
-      on 1=1
-        and a.cocktail_no = b.cocktail_no
-      join tb_material c 
-      on 1=1
-        and b.material_id = c.material_id
-      group by 
-        a.cocktail_name
-        , a.cocktail_name
-        , a.description
-        , a.cocktail_method
+      where 1=1
+        and 
+        (
+          (
+            select count(1) - 1
+            from
+            (
+              select 
+              from tb_cocktail_material b 
+              where 1=1
+                and a.cocktail_no = b.cocktail_no
+            ) a 
+            join tb_material c 
+            on 1=1
+              and b.material_id = c.material_id
+          )
+          =
+          (
+            select count(1) 
+            from
+            (
+              select 
+              from tb_cocktail_material b 
+              where 1=1
+                and a.cocktail_no = b.cocktail_no
+            ) a 
+            join tb_material c 
+            on 1=1
+              and b.material_id = c.material_id
+              and c.own
+          )
+        )
       order by a.cocktail_name
     ''');
   }
