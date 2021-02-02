@@ -46,6 +46,36 @@ class DatabaseManager {
       from tb_cocktail a
       where 1=1
         and 
+        (
+          (
+            select count(1)
+            from
+            (
+              select 
+              from tb_cocktail_material b 
+              where 1=1
+                and a.cocktail_no = b.cocktail_no
+            ) a 
+            join tb_material c 
+            on 1=1
+              and b.material_id = c.material_id
+          )
+          =
+          (
+            select count(1) 
+            from
+            (
+              select 
+              from tb_cocktail_material b 
+              where 1=1
+                and a.cocktail_no = b.cocktail_no
+            ) a 
+            join tb_material c 
+            on 1=1
+              and b.material_id = c.material_id
+              and c.own
+          )
+        ) 
         and a.cocktail_name like '%$search%'
       order by a.cocktail_name
     ''');
