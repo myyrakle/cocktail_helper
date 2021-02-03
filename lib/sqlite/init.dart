@@ -217,7 +217,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '진의 상쾌한 향과 토닉의 시원한 맛이 어우러진 완벽한 한 잔입니다. 취향대로 레몬이나 라임주스를 첨가해주면 좋습니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -244,7 +243,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '칵테일의 왕이라 불리는 마티니입니다. 그래도 대단한 맛은 기대하지 않는 게 좋을 거에요. 진과 베르뭇을 넣어서 젓고, 올리브 한개를 넣어주면 됩니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -262,7 +260,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '새콤하고 향긋한 한 잔입니다. 재료들을 셰이커에 넣고 열심히 흔들면 완성입니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -281,7 +278,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '마티니에서 드라이 베르뭇을 스위트 베르뭇으로 바꾼 버전입니다. 마티니와 큰 차이는 없습니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -299,7 +295,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '새콤달콤하면서도 알코올이 훅 올라오는 한 잔입니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -318,7 +313,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '씁쓸하면서도 파일애플의 청량한 맛이 잘 느껴지는 한 잔입니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -342,7 +336,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '오렌지와 진의 향이 뒤섞인 무난한 한 잔입니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -360,7 +353,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '재료를 셰이킹한 후 체리가 있다면 장식해주면 됩니다. 베르뭇과 라임의 맛이 기묘하게 어우러지는 것이 인상적입니다. 진의 맛은 상당히 묻히는 편이군요.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -378,7 +370,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '진과 스위트 베르뭇을 1:1로 섞는 단순한 레시피입니다. 잇(It)이 이탈리아의 준말이라, 이탈리아산 베르뭇을 쓰는게 정석이죠.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -395,7 +386,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '모스코 뮬의 변형 레시피 중 하나입니다. 시원한 드링크죠.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -413,7 +403,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '레몬의 맛과 탄산이 살짝 느껴지는 부드러운 한 잔입니다. 탄산수를 제외한 재료를 셰이킹한 후, 탄산수를 채워주면 끝입니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -433,7 +422,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '골드 피즈에서 노른자만 흰자로 바꾼 레시피입니다. 부드러운 맛은 덜하지만, 균형감은 좀더 좋은 느낌입니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -453,7 +441,6 @@ Future<DatabaseManager> initializeDatabase() async {
            '이름 그대로 핑크빛을 띠는 부드러운 한 잔입니다. 부드러운 질감과 함께 진의 향과 맛이 은은하게 느껴집니다. 크림은 우유로 대체해도 되지만, 크림이 좀더 부드럽고 좋습니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
@@ -472,12 +459,29 @@ Future<DatabaseManager> initializeDatabase() async {
            '새콤 향긋한 한 잔입니다. 송곳(Gimlet)이라는 이름처럼 새콤한 맛이 혀를 찔러옵니다.', 
            0
         );
-        
         INSERT INTO "tb_cocktail_material"
         ("cocktail_no", "material_id", "optional", "amount")
         VALUES
         (14, 'GIN', 0, '45ml'),
         (14, 'LIME_JUICE', 0, '15ml');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           15
+           '진 피즈', 
+           'SHAKING', 
+           '시원하고 청량한 한 잔입니다. 탄산수를 제외한 재료를 먼저 셰이킹한 후, 탄산수를 따라주면 됩니다. 수많은 바리에이션이 있습니다.', 
+           0
+        );
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (15, 'GIN', 0, '45ml'),
+        (15, 'LEMON_JUICE', 0, '30ml'),
+        (15, 'SYRUP', 0, '10ml'),
+        (15, 'WATER_SPARKLING', 0, '80ml');
         ''');
     },
     version: 1,

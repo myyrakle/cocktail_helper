@@ -154,4 +154,15 @@ class DatabaseManager {
       order by a.cocktail_name
     ''');
   }
+
+  // 재료 소유 여부 변경
+  Future<void> updateMaterialOwn(String materialId, bool own) async {
+    return await database.rawQuery('''
+      update tb_material
+      set
+        own = $own 
+      where 1=1
+        material_id = '$materialId'
+    ''');
+  }
 }
