@@ -5,21 +5,25 @@ class HamburgerHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 130,
       child: DrawerHeader(
         child: Column(
           children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: IconButton(
-                  icon: Icon(
-                    Icons.arrow_back,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  }),
+            Align(alignment: Alignment.center, child: Text("Happy Alcohol!")),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: IconButton(
+                    iconSize: 30,
+                    icon: Icon(
+                      Icons.arrow_back,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
+              ),
             ),
-            Text('Happy Alcohol')
           ],
         ),
         decoration: BoxDecoration(
