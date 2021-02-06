@@ -1,5 +1,35 @@
 import 'package:flutter/material.dart';
 
+class HamburgerHeader extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150,
+      child: DrawerHeader(
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+            ),
+            Text('Happy Alcohol')
+          ],
+        ),
+        decoration: BoxDecoration(
+          color: Colors.blue,
+        ),
+      ),
+    );
+  }
+}
+
 class HamburgerMenu extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -12,6 +42,7 @@ class HamburgerMenu extends StatelessWidget {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
+          HamburgerHeader(),
           ListTile(
             title: Text('Item 1'),
             onTap: () {
