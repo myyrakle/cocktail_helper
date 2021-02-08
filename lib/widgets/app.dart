@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './homepage.dart';
+import 'package:cocktail_helper/widgets/pages/homepage.dart';
 import 'package:cocktail_helper/sqlite/manager.dart';
 
 import 'package:provider/provider.dart';
@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var materialApp = MaterialApp(
-        title: '칵테일 냉장고',
+        title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,

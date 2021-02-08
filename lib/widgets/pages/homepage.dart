@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:cocktail_helper/sqlite/manager.dart';
 import 'package:cocktail_helper/widgets/hamburger.dart';
+import 'package:cocktail_helper/widgets/appbar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -32,9 +33,7 @@ class _HomePageState extends State<HomePage> {
     var db = context.watch<DatabaseManager>();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: HomeAppBar(),
       drawer: HamburgerMenu(),
       body: Center(
         child: Column(
