@@ -482,6 +482,24 @@ Future<DatabaseManager> initializeDatabase() async {
         (15, 'LEMON_JUICE', 0, '30ml'),
         (15, 'SYRUP', 0, '10ml'),
         (15, 'WATER_SPARKLING', 0, '80ml');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           16
+           '브롱크스', 
+           'SHAKING', 
+           '베르뭇의 강한 향과 맛에 진과 오렌지의 맛이 살짝 뒤따르는 맛입니다. 베르뭇을 좋아한다면 괜찮은 레시피입니다.', 
+           0
+        );
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (16, 'GIN', 0, '30ml'),
+        (16, 'VERMOUTH_SWEET', 0, '15ml'),
+        (16, 'VERMOUTH_DRY', 0, '15ml'),
+        (16, 'ORANGE_JUICE', 0, '15ml');
         ''');
     },
     version: 1,
