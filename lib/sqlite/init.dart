@@ -500,6 +500,41 @@ Future<DatabaseManager> initializeDatabase() async {
         (16, 'VERMOUTH_SWEET', 0, '15ml'),
         (16, 'VERMOUTH_DRY', 0, '15ml'),
         (16, 'ORANGE_JUICE', 0, '15ml');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           17
+           '진 리키', 
+           'BUILD', 
+           '스탠다드한 느낌의 롱 드링크입니다. 진과 라임의 향이 느껴지는, 달지도 쓰지도 않은 깔끔하고 시원한 맛을 내죠.', 
+           0
+        );
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (17, 'GIN', 0, '30ml'),
+        (17, 'LINE_JUICE', 0, '15ml'),
+        (17, 'WATER_SPARKLING', 0, '풀업(120ml 정도)');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           18
+           '퀸즈', 
+           'SHAKING', 
+           '퍼펙트 마티니에 파인애플이 약간만 추가된 조합입니다. 살짝 달콤한 마티니를 마시는 느낌이네요.', 
+           0
+        );
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (18, 'GIN', 0, '30ml'),
+        (18, 'VERMOUTH_SWEET', 0, '15ml'),
+        (18, 'VERMOUTH_DRY', 0, '15ml'),
+        (18, 'PINEAPPLE_JUICE', 0, '15ml');
         ''');
     },
     version: 1,
