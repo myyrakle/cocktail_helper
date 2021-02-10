@@ -535,6 +535,22 @@ Future<DatabaseManager> initializeDatabase() async {
         (18, 'VERMOUTH_SWEET', 0, '15ml'),
         (18, 'VERMOUTH_DRY', 0, '15ml'),
         (18, 'PINEAPPLE_JUICE', 0, '15ml');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           19
+           '핑크 진', 
+           'BUILD', 
+           '진에 비터스의 향을 살짝 입힌 단순한 레시피입니다. 비터스의 제품을 특별히 골라서 사용하는 게 아니라면, 핑크색을 내기는 힘들겁니다.', 
+           0
+        );
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (19, 'GIN', 0, '60ml'),
+        (19, 'ANGOSTURA_BITTERS', 0, '1 대쉬');
         ''');
     },
     version: 1,
