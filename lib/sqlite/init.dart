@@ -551,6 +551,40 @@ Future<DatabaseManager> initializeDatabase() async {
         VALUES
         (19, 'GIN', 0, '60ml'),
         (19, 'ANGOSTURA_BITTERS', 0, '1 대쉬');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           20
+           '파리지앵', 
+           'STIR', 
+           '진과 베르뭇, 카시스의 개성적인 맛들이 나름 잘 어울리는 복합적인 레시피입니다. 베르뭇을 그리 좋아하지 않더라도 괜찮게 먹을 수 있을 것 같습니다.', 
+           0
+        );
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (20, 'GIN', 0, '30ml'),
+        (20, 'VERMOUTH_DRY', 0, '15ml'),
+        (20, 'CASSIS', 0, '15ml');
+        
+        INSERT INTO "tb_cocktail"
+        ("cocktail_no", "cocktail_name", "cocktail_method", "description", "is_non_alcohol")
+        VALUES
+        (
+           21
+           '알렉산더', 
+           'SHAKING', 
+           '인기있는 레시피 중 하나인 브랜디 알렉산더의 오리지널 레시피입니다. 부드럽고 초콜렛의 맛이 느껴지긴 하지만, 진의 숨길 수 없는 개성이 톡톡 튀어요.', 
+           0
+        );
+        INSERT INTO "tb_cocktail_material"
+        ("cocktail_no", "material_id", "optional", "amount")
+        VALUES
+        (21, 'GIN', 0, '60ml'),
+        (21, 'CREME_DE_CACAO_DARK', 0, '30ml'),
+        (21, 'CREAM', 0, '30ml');
         ''');
     },
     version: 1,
