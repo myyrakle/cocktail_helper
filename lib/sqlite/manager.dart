@@ -5,7 +5,7 @@ class DatabaseManager {
 
   DatabaseManager(this.database);
 
-  Future<List<Object>> getMaterialCategoryList() async {
+  Future<List<Map>> getMaterialCategoryList() async {
     return await database.rawQuery('''
       select *
       from tb_material_category
@@ -13,7 +13,8 @@ class DatabaseManager {
     ''');
   }
 
-  Future<List<Object>> getMaterialList(String category) async {
+  // 재료 목록 조회
+  Future<List<Map>> getMaterialList(String category) async {
     return await database.rawQuery('''
       select *
       from tb_material
@@ -21,7 +22,7 @@ class DatabaseManager {
     ''');
   }
 
-  Future<List<Object>> getCocktailMethodList() async {
+  Future<List<Map>> getCocktailMethodList() async {
     return await database.rawQuery('''
       select *
       from tb_cocktail_method
@@ -29,7 +30,7 @@ class DatabaseManager {
   }
 
   // 칵테일 레시피 전체 조회
-  Future<List<Object>> getCocktailListAll(String search) async {
+  Future<List<Map>> getCocktailListAll(String search) async {
     return await database.rawQuery('''
       select *
       from tb_cocktail a
@@ -40,7 +41,7 @@ class DatabaseManager {
   }
 
   // 만들 수 있는 칵테일 레시피 전체 조회
-  Future<List<Object>> getCocktailListAvailable(String search) async {
+  Future<List<Map>> getCocktailListAvailable(String search) async {
     return await database.rawQuery('''
       select *
       from tb_cocktail a
@@ -82,7 +83,7 @@ class DatabaseManager {
   }
 
   // 하나만 있으면 만들 수 있는 칵테일 레시피 전체 조회
-  Future<List<Object>> getCocktailListNeedOne(String search) async {
+  Future<List<Map>> getCocktailListNeedOne(String search) async {
     return await database.rawQuery('''
       select 
         a.cocktail_no
@@ -127,7 +128,7 @@ class DatabaseManager {
   }
 
   // 특정 재료를 사용하는 칵테일 레시피 전체 조회
-  Future<List<Object>> getCocktailListByMaterial(String materialId) async {
+  Future<List<Map>> getCocktailListByMaterial(String materialId) async {
     return await database.rawQuery('''
       select *
       from tb_cocktail a
@@ -145,7 +146,7 @@ class DatabaseManager {
   }
 
   // 특정 방법을 사용하는 칵테일 레시피 전체 조회
-  Future<List<Object>> getCocktailListByMethod(String materialId) async {
+  Future<List<Map>> getCocktailListByMethod(String materialId) async {
     return await database.rawQuery('''
       select *
       from tb_cocktail a
