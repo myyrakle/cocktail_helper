@@ -7,16 +7,16 @@ import 'package:cocktail_helper/widgets/appbar.dart';
 
 import 'package:cocktail_helper/widgets/items/material_list_item.dart';
 
-class MaterialPage extends StatefulWidget {
-  MaterialPage({Key key, this.title}) : super(key: key);
+class MaterialListPage extends StatefulWidget {
+  MaterialListPage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MaterialPageState createState() => _MaterialPageState();
+  _MaterialListPageState createState() => _MaterialListPageState();
 }
 
-class _MaterialPageState extends State<MaterialPage> {
+class _MaterialListPageState extends State<MaterialListPage> {
   int _counter = 0;
   List<Map> _materialList;
 

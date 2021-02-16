@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cocktail_helper/widgets/pages/homepage.dart';
+import 'package:cocktail_helper/widgets/pages/material_category_page.dart';
+import 'package:cocktail_helper/widgets/pages/material_list_page.dart';
 import 'package:cocktail_helper/sqlite/manager.dart';
 
 import 'package:provider/provider.dart';
@@ -23,6 +25,8 @@ class MainApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => HomePage(title: 'Flutter Demo Home Page'),
+          '/material-category': (context) => MaterialCategoryPage(),
+          '/material-list': (context) => MaterialListPage(),
         });
 
     return MultiProvider(
