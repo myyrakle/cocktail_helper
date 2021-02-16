@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cocktail_helper/widgets/pages/homepage.dart';
 import 'package:cocktail_helper/widgets/pages/material_category_page.dart';
 import 'package:cocktail_helper/widgets/pages/material_list_page.dart';
+import 'package:cocktail_helper/widgets/pages/cocktail_list_page.dart';
 import 'package:cocktail_helper/sqlite/manager.dart';
 
 import 'package:provider/provider.dart';
@@ -27,6 +28,7 @@ class MainApp extends StatelessWidget {
           '/': (context) => HomePage(title: 'Flutter Demo Home Page'),
           '/material-category': (context) => MaterialCategoryPage(),
           '/material-list': (context) => MaterialListPage(),
+          '/cocktail-list': (context) => CocktailListPage(),
         });
 
     return MultiProvider(
