@@ -35,6 +35,7 @@ class _MaterialListPageState extends State<MaterialListPage> {
   Widget build(BuildContext context) {
     var db = context.watch<DatabaseManager>();
 
+    var materialId = ModalRoute.of(context).settings.arguments;
     //db.getMaterialList();
 
     return Scaffold(

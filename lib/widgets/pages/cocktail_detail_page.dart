@@ -35,6 +35,8 @@ class _CocktailDetailPageState extends State<CocktailDetailPage> {
   Widget build(BuildContext context) {
     var db = context.watch<DatabaseManager>();
 
+    var cocktailNo = ModalRoute.of(context).settings.arguments;
+
     //db.getMaterialList();
 
     return Scaffold(
