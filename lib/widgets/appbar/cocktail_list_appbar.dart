@@ -14,6 +14,8 @@ class CocktailListAppBar extends StatefulWidget with PreferredSizeWidget {
 }
 
 class _CocktailListAppBarState extends State<CocktailListAppBar> {
+  var db = context.watch<DatabaseManager>();
+
   int _counter = 0;
   List<Map> _materialList;
 
