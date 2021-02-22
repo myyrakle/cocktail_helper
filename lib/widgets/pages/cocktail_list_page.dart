@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:cocktail_helper/sqlite/manager.dart';
-import 'package:cocktail_helper/widgets/hamburger.dart';
-import 'file:///C:/Users/sssan/Code/Flutter/cocktail_helper/cocktail_helper/lib/widgets/appbar/appbar.dart';
+import 'file:///C:/Users/sssan/Code/Flutter/cocktail_helper/cocktail_helper/lib/widgets/appbar/hamburger.dart';
+import 'file:///C:/Users/sssan/Code/Flutter/cocktail_helper/cocktail_helper/lib/widgets/appbar/cocktail_list_appbar.dart';
 
 import 'package:cocktail_helper/widgets/items/material_list_item.dart';
 
@@ -39,7 +39,7 @@ class _CocktailListPageState extends State<CocktailListPage> {
     //db.getMaterialList();
 
     return Scaffold(
-      appBar: HomeAppBar(),
+      appBar: CocktailListAppBar(),
       drawer: HamburgerMenu(),
       body: null,
     );

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SearchButton extends StatelessWidget {
-  SearchButton();
+  final _onClick;
+
+  SearchButton(this._onClick);
 
   // This widget is the root of your application.
   @override
@@ -9,7 +12,7 @@ class SearchButton extends StatelessWidget {
     return IconButton(
         icon: Icon(Icons.search),
         onPressed: () {
-          Navigator.pushNamed(context, "/setting");
+          _onClick();
         });
   }
 }
