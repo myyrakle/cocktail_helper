@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:cocktail_helper/sqlite/manager.dart';
-import 'file:///C:/Users/sssan/Code/Flutter/cocktail_helper/cocktail_helper/lib/widgets/appbar/hamburger.dart';
-import 'file:///C:/Users/sssan/Code/Flutter/cocktail_helper/cocktail_helper/lib/widgets/appbar/home_appbar.dart';
+import 'package:cocktail_helper/widgets/appbar/hamburger.dart';
+import 'package:cocktail_helper/widgets/appbar/home_appbar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cocktail_helper/widgets/buttons/search_button.dart';
 import 'package:cocktail_helper/widgets/buttons/setting_page_button.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
+import 'package:cocktail_helper/sqlite/manager.dart';
 
 class CocktailListAppBar extends StatefulWidget with PreferredSizeWidget {
   CocktailListAppBar();
@@ -14,8 +16,6 @@ class CocktailListAppBar extends StatefulWidget with PreferredSizeWidget {
 }
 
 class _CocktailListAppBarState extends State<CocktailListAppBar> {
-  var db = context.watch<DatabaseManager>();
-
   int _counter = 0;
   List<Map> _materialList;
 
@@ -25,6 +25,8 @@ class _CocktailListAppBarState extends State<CocktailListAppBar> {
 
   @override
   Widget build(BuildContext context) {
+    var db = context.watch<DatabaseManager>();
+
     return AppBar(
       title: title,
       actions: [
